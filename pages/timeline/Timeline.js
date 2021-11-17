@@ -26,7 +26,7 @@ const Timeline = ({ tuits }) => {
 export default Timeline;
 export const getServerSideProps = async () => {
   const response = await fetch(
-    "https://isdi-blog-posts-api.herokuapp.com/posts"
+    "https://twitterapifrannydani.herokuapp.com/tuitah"
   );
   const tuits = await response.json();
 
