@@ -1,7 +1,9 @@
+import { useState } from "react";
+
 const CreateTuitform = () => {
   const postCreate = async (event) => {
     event.preventDefault();
-    await fetch("https://twitterapifrannydani.herokuapp.com/tuitah", {
+    await fetch("https://twitterapifrannydani.herokuapp.com/tuitah/create", {
       method: "POST",
       body: JSON.stringify(postData),
       headers: {
@@ -14,8 +16,7 @@ const CreateTuitform = () => {
   };
 
   const [postData, setPostData] = useState({
-    title: "",
-    body: "",
+    text: "",
   });
 
   return (
@@ -23,13 +24,13 @@ const CreateTuitform = () => {
       <h1> What do you want to post? </h1>
       <form autoComplete="off" onSubmit={postCreate} noValidate>
         <div className="mb-3 row">
-          <label htmlFor="body" className="form-label">
+          <label htmlFor="text" className="form-label">
             Write your tuit:
           </label>
           <textarea
-            id="body"
+            id="text"
             placeholder="Write your tuit..."
-            value={postData.body}
+            value={postData.text}
             onChange={onChangeData}
             required
             className="mb-2 form-control"
@@ -46,3 +47,5 @@ const CreateTuitform = () => {
     </>
   );
 };
+
+export default CreateTuitform;
