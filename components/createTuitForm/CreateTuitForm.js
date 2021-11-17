@@ -1,7 +1,7 @@
 const CreateTuitform = () => {
   const postCreate = async (event) => {
     event.preventDefault();
-    await fetch("https://isdi-blog-posts-api.herokuapp.com/posts", {
+    await fetch("https://twitterapifrannydani.herokuapp.com/tuitah", {
       method: "POST",
       body: JSON.stringify(postData),
       headers: {
