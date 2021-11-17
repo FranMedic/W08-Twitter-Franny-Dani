@@ -6,7 +6,9 @@ describe("Given a CreateTuit component", () => {
     test("Then it should shows the list of tuiterS", () => {
       render(<CreateTuit />);
 
-      const createTuit = screen.getByRole("heading", { name: /New Tuit:/i });
+      const createTuit = screen.getByRole("heading", {
+        name: /Create a new tuit/i,
+      });
       expect(createTuit).toBeInTheDocument();
     });
   });
