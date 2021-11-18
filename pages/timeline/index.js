@@ -4,14 +4,16 @@ const Timeline = ({ tuits }) => {
   return (
     <>
       <h2>Timeline</h2>
-      <ul>
+      <ul className="tuitlist">
         {tuits
           .sort((a, b) => new Date(b.date) - new Date(a.date))
           .map((tuit) => (
-            <li key={tuit.id}>
+            <li className="tuit" key={tuit.id}>
               <Link href={`timeline/${tuit.id}`}>
                 <a>{tuit.text}</a>
               </Link>
+              <button className="like">Like</button>
+              <button className="delete">Delete</button>
             </li>
           ))}
       </ul>
