@@ -13,6 +13,8 @@ const Tuit = ({ tuit }) => {
       }
     );
     event.preventDefault();
+    router.push("/timeline");
+    // window.location.reload();
   };
 
   if (router.isFallback) {
