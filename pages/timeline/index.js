@@ -13,7 +13,6 @@ const Timeline = ({ tuits }) => {
                 <a>{tuit.text}</a>
               </Link>
               <button className="like">Like</button>
-              <button className="delete">Delete</button>
             </li>
           ))}
       </ul>

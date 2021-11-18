@@ -2,13 +2,29 @@ import { useRouter } from "next/router";
 
 const Tuit = ({ tuit }) => {
   const router = useRouter();
+  const onDelete = async (event) => {
+    await fetch(
+      `https://twitterapifrannydani.herokuapp.com/tuitah/delete/${tuit.id}`,
+      {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+    event.preventDefault();
+  };
+
   if (router.isFallback) {
     return "News tuits are coming to the timeline";
   }
-  console.log(tuit);
+
   return (
     <>
       <h2 key={tuit.id}>{tuit.text}</h2>
+      <button className="button_delete" onClick={onDelete}>
+        Delete
+      </button>
     </>
   );
 };
