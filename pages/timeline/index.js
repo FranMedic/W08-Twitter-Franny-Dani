@@ -12,6 +12,7 @@ const Timeline = ({ tuits }) => {
               <Link href={`timeline/${tuit.id}`}>
                 <a>{tuit.text}</a>
               </Link>
+              <p>{tuit.likes}</p>
               <button className="like">Like</button>
             </li>
           ))}
