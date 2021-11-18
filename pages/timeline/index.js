@@ -1,6 +1,20 @@
 import Link from "next/link";
+import TimeAgo from "javascript-time-ago";
+import es from "javascript-time-ago/locale/es.json";
+import ReactTimeAgo from "react-time-ago";
+import { useState } from "react";
+TimeAgo.addLocale(es);
 
 const Timeline = ({ tuits }) => {
+  const onLike = async (id) => {
+    const response = await fetch(
+      `https://twitterapifrannydani.herokuapp.com/tuitah/${id}`,
+      {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+      }
+    );
+  };
   return (
     <>
       <h2>Timeline</h2>
@@ -13,7 +27,10 @@ const Timeline = ({ tuits }) => {
                 <a>{tuit.text}</a>
               </Link>
               <p>{tuit.likes}</p>
-              <button className="like">Like</button>
+              <ReactTimeAgo date={Date.parse(tuit.date)} locale="es" />
+              <button onClick={() => onLike(tuit.id)} className="like">
+                Like
+              </button>
             </li>
           ))}
       </ul>
