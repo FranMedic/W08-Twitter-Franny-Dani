@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
 
 const Tuit = ({ tuit }) => {
+  console.log(tuit);
   const router = useRouter();
   if (router.isFallback) {
     return "News tuits are coming to the timeline";
@@ -15,8 +16,9 @@ const Tuit = ({ tuit }) => {
 
 export const getServerSideProps = async ({ params }) => {
   const response = await fetch(
-    "https://twitterapifrannydani.herokuapp.com/tuitah" + params.id
+    "https://twitterapifrannydani.herokuapp.com/tuitah/" + params.id
   );
+
   const tuit = await response.json();
 
   return {

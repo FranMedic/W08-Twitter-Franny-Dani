@@ -5,19 +5,21 @@ const Timeline = ({ tuits }) => {
     <>
       <h2>Timeline</h2>
       <ul>
-        {tuits.map((tuit) => (
-          <li key={tuit.id}>
-            <Link
-              href={{
-                pathname: "twitList/[id]",
-                query: { id: tuit.id },
-              }}
-              passHref
-            >
-              <h3>{tuit.text}</h3>
-            </Link>
-          </li>
-        ))}
+        {tuits
+          .sort((a, b) => new Date(b.date) - new Date(a.date))
+          .map((tuit) => (
+            <li key={tuit.id}>
+              <Link
+                href={{
+                  pathname: "twitList/[id]",
+                  query: { id: tuit.id },
+                }}
+                passHref
+              >
+                <h3>{tuit.text}</h3>
+              </Link>
+            </li>
+          ))}
       </ul>
     </>
   );
