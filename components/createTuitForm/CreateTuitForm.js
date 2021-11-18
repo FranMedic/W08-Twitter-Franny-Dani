@@ -35,6 +35,7 @@ const CreateTuitform = () => {
             value={tuitData.text}
             onChange={onChangeData}
             required
+            maxLength="100"
             className="mb-2 form-control"
           />
         </div>
