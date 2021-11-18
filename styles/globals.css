@@ -2,7 +2,7 @@ html,
 body {
   padding: 0;
   margin: 0;
-  background-color: #e7ecef;
+  background-color: #efcb68;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   display: flex;
@@ -18,20 +18,29 @@ a {
 * {
   box-sizing: border-box;
 }
-Header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
 .tuit-text {
   color: brown;
 }
 
 button {
+  border: none;
   margin: 5px;
+  border-radius: 5px;
 }
 
 li {
+  height: 50px;
+  width: 300px;
   list-style: none;
+  color: #160c28;
+  font-size: bold;
+}
+
+.header {
+  text-align: center;
+  background-color: #160c28;
+  width: 600px;
+  color: #efcb68;
+  padding: 20px;
 }
