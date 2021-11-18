@@ -2,7 +2,7 @@ import Link from "next/link";
 import TimeAgo from "javascript-time-ago";
 import es from "javascript-time-ago/locale/es.json";
 import ReactTimeAgo from "react-time-ago";
-import { useState } from "react";
+
 TimeAgo.addLocale(es);
 
 const Timeline = ({ tuits }) => {
@@ -23,7 +23,7 @@ const Timeline = ({ tuits }) => {
           .sort((a, b) => new Date(b.date) - new Date(a.date))
           .map((tuit) => (
             <li className="tuit" key={tuit.id}>
-              <Link href={`timeline/${tuit.id}`}>
+              <Link href={`/timeline/${tuit.id}`}>
                 <a>{tuit.text}</a>
               </Link>
               <p>{tuit.likes}</p>
