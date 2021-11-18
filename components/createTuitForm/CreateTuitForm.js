@@ -1,4 +1,5 @@
 import { useState } from "react";
+import styles from "../../styles/Header.module.css";
 
 const CreateTuitform = () => {
   const tuitCreate = async (event) => {
@@ -25,7 +26,7 @@ const CreateTuitform = () => {
     <>
       <h1> What do you want to post? </h1>
       <form autoComplete="off" onSubmit={tuitCreate} noValidate>
-        <div className="mb-3 row">
+        <div className={styles.form}>
           <label htmlFor="text" className="form-label">
             Write your tuit:
           </label>
@@ -35,15 +36,13 @@ const CreateTuitform = () => {
             value={tuitData.text}
             onChange={onChangeData}
             required
+            cols="50"
+            rows="5"
             maxLength="100"
-            className="mb-2 form-control"
+            className={styles.textarea}
           />
         </div>
-        <button
-          value="Submit"
-          className="btn btn-primary mt-1 mb-5"
-          type="submit"
-        >
+        <button value="Submit" className="button" type="submit">
           Post your Tuith!
         </button>
       </form>

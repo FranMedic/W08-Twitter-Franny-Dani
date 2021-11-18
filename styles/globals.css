@@ -14,6 +14,7 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+  margin-right: 20px;
 }
 
 * {
@@ -34,16 +35,4 @@ button {
 button:hover {
   background-color: #351e5f;
   color: #e4a909;
-}
-
-li {
-  height: 100px;
-  width: 300px;
-  list-style: none;
-  font-weight: bold;
-  color: #160c28;
-}
-
-textarea {
-  resize: none;
 }

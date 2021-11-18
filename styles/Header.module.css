@@ -14,3 +14,25 @@
 .timeline_title {
   color: #160c28;
 }
+.tuitContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.tuit {
+  border: 1px solid black;
+  padding: 20px;
+  height: 100px;
+  width: 500px;
+  list-style: none;
+  font-weight: bold;
+  color: #160c28;
+  margin-bottom: 50px;
+  background: url("/bongocat.png") no-repeat;
+  background-size: contain;
+  background-position: right;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+}
