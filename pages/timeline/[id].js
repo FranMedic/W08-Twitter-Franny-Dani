@@ -2,6 +2,7 @@ import { useRouter } from "next/router";
 import TimeAgo from "javascript-time-ago";
 import es from "javascript-time-ago/locale/es.json";
 import ReactTimeAgo from "react-time-ago";
+import styles from "../../styles/Header.module.css";
 TimeAgo.addLocale(es);
 
 const Tuit = ({ tuit }) => {
@@ -27,12 +28,18 @@ const Tuit = ({ tuit }) => {
 
   return (
     <>
-      <h2 key={tuit.id}>{tuit.text}</h2>
-      <p>{tuit.likes}</p>
-      <ReactTimeAgo date={Date.parse(tuit.date)} locale="es" />
-      <button className="button_delete" onClick={onDelete}>
-        Delete
-      </button>
+      <div className={styles.detailsContainer}>
+        <div className={styles.detailsCard}>
+          <h2 key={tuit.id}>{tuit.text}</h2>
+          <div className={styles.info}>
+            <p>{tuit.likes}</p>
+            <ReactTimeAgo date={Date.parse(tuit.date)} locale="es" />
+          </div>
+          <button className={styles.buttonDelete} onClick={onDelete}>
+            Delete
+          </button>
+        </div>
+      </div>
     </>
   );
 };
