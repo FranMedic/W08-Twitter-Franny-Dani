@@ -9,14 +9,8 @@ const Timeline = ({ tuits }) => {
           .sort((a, b) => new Date(b.date) - new Date(a.date))
           .map((tuit) => (
             <li className="tuit" key={tuit.id}>
-              <Link
-                href={{
-                  pathname: "twitList/[id]",
-                  query: { id: tuit.id },
-                }}
-                passHref
-              >
-                <h3 className="tuit-text">{tuit.text}</h3>
+              <Link href={`timeline/${tuit.id}`}>
+                <a>{tuit.text}</a>
               </Link>
               <button className="like">Like</button>
               <button className="delete">Delete</button>
