@@ -4,11 +4,11 @@ const Timeline = ({ tuits }) => {
   return (
     <>
       <h2>Timeline</h2>
-      <ul>
+      <ul className="tuitlist">
         {tuits
           .sort((a, b) => new Date(b.date) - new Date(a.date))
           .map((tuit) => (
-            <li key={tuit.id}>
+            <li className="tuit" key={tuit.id}>
               <Link
                 href={{
                   pathname: "twitList/[id]",
@@ -16,8 +16,10 @@ const Timeline = ({ tuits }) => {
                 }}
                 passHref
               >
-                <h3>{tuit.text}</h3>
+                <h3 className="tuit-text">{tuit.text}</h3>
               </Link>
+              <button className="like">Like</button>
+              <button className="delete">Delete</button>
             </li>
           ))}
       </ul>
