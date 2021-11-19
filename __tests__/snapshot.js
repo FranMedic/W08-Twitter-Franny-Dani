@@ -1,6 +1,6 @@
 import React from "react";
 import renderer from "react-test-renderer";
-import Index from "../with-jest-app/pages/timeline/index";
+import Index from "../pages/timeline/index";
 
 it("renders homepage unchanged", () => {
   const tree = renderer.create(<Index />).toJSON();
