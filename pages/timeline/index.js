@@ -3,15 +3,21 @@ import TimeAgo from "javascript-time-ago";
 import es from "javascript-time-ago/locale/es.json";
 import ReactTimeAgo from "react-time-ago";
 import styles from "../../styles/Header.module.css";
+import PropTypes from "prop-types";
 
 TimeAgo.addLocale(es);
 
 const Timeline = ({ tuits }) => {
   const onLike = async (id) => {
-    await fetch(`https://twitterapifrannydani.herokuapp.com/tuitah/${id}`, {
-      method: "PATCH",
-      headers: { "Content-Type": "application/json" },
-    });
+    const response = await fetch(
+      `https://twitterapifrannydani.herokuapp.com/tuitah/${id}`,
+      {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+      }
+    );
+    const likes = response.json();
+    return likes;
   };
   return (
     <>
@@ -25,7 +31,7 @@ const Timeline = ({ tuits }) => {
                 <Link href={`/timeline/${tuit.id}`}>
                   <a>{tuit.text}</a>
                 </Link>
-                <p>{tuit.likes}</p>
+                <p>{tuit.likes} Likes</p>
                 <ReactTimeAgo date={Date.parse(tuit.date)} locale="es" />
                 <button onClick={() => onLike(tuit.id)} className={styles.like}>
                   Like
@@ -48,4 +54,7 @@ export const getServerSideProps = async () => {
   return {
     props: { tuits },
   };
+};
+Timeline.propTypes = {
+  tuits: PropTypes.array.isRequired,
 };

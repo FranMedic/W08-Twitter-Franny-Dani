@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Given a timeline component When it recives and object then it should render a tuit with the tuit text inside 1`] = `
+<div
+  className="tuitContainer"
+>
+  <h2
+    className="tuitTitle"
+  >
+    Timeline
+  </h2>
+  <ul
+    className="tuitlist"
+  >
+    <li
+      className="tuit"
+    >
+      <a
+        href="/timeline/61969108c5fead84ba7b8a32"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        patata
+
+      </a>
+      <p>
+        0
+         Likes
+      </p>
+      <time
+        dateTime="2021-11-18T17:44:40.529Z"
+      >
+        hace 14 horas
+      </time>
+      <button
+        className="like"
+        onClick={[Function]}
+      >
+        Like
+      </button>
+    </li>
+  </ul>
+</div>
+`;

@@ -3,6 +3,8 @@ import TimeAgo from "javascript-time-ago";
 import es from "javascript-time-ago/locale/es.json";
 import ReactTimeAgo from "react-time-ago";
 import styles from "../../styles/Header.module.css";
+import PropTypes from "prop-types";
+
 TimeAgo.addLocale(es);
 
 const Tuit = ({ tuit }) => {
@@ -70,3 +72,7 @@ export const getStaticProps = async ({ params: { id } }) => {
 };
 
 export default Tuit;
+
+Tuit.propTypes = {
+  tuit: PropTypes.object.isRequired,
+};

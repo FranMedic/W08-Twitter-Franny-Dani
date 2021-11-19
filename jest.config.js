@@ -7,7 +7,7 @@ module.exports = {
     "!**/node_modules/**",
     "!**/.next/**",
     "!**/*config*.js",
-    "!**/coverage/**.js",
+    "!**/config.js",
   ],
   moduleNameMapper: {
     /* Handle CSS imports (with CSS modules)
